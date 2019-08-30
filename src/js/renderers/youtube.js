@@ -449,6 +449,7 @@ const YouTubeIframeRenderer = {
 					iv_load_policy: 3
 				}, youtube.options.youtube),
 				origin: window.location.host,
+				host: '//www.youtube-nocookie.com',
 				events: {
 					onReady: (e) => {
 						mediaElement.youTubeApi = youTubeApi = e.target;
