@@ -449,6 +449,7 @@ const YouTubeIframeRenderer = {
 					iv_load_policy: 3
 				}, youtube.options.youtube),
 				origin: window.location.host,
+				host: location.protocol + '//www.youtube-nocookie.com',
 				events: {
 					onReady: (e) => {
 						mediaElement.youTubeApi = youTubeApi = e.target;
@@ -551,11 +552,6 @@ const YouTubeIframeRenderer = {
 				}
 			}
 		;
-
-		// If `nocookie` feature was enabled, set nocookie host for youtube api
-		if (youtube.options.youtube.nocookie) {
-			youtubeSettings.host = location.protocol + '//www.youtube-nocookie.com'
-		}
 
 		// The following will prevent that, in mobile devices, YouTube is displayed in fullscreen when using audio
 		// of if the `playsinline` attribute is not set
