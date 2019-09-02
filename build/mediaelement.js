@@ -3238,6 +3238,7 @@ var YouTubeIframeRenderer = {
 				iv_load_policy: 3
 			}, youtube.options.youtube),
 			origin: _window2.default.location.host,
+			host: location.protocol + '//www.youtube-nocookie.com',
 			events: {
 				onReady: function onReady(e) {
 					mediaElement.youTubeApi = youTubeApi = e.target;
@@ -3335,10 +3336,6 @@ var YouTubeIframeRenderer = {
 				}
 			}
 		};
-
-		if (youtube.options.youtube.nocookie) {
-			youtubeSettings.host = location.protocol + '//www.youtube-nocookie.com';
-		}
 
 		if (isAudio || mediaElement.originalNode.hasAttribute('playsinline')) {
 			youtubeSettings.playerVars.playsinline = 1;
